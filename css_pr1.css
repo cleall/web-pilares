@@ -10,7 +10,7 @@
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: 0.4fr 1fr 0.4fr;
-    grid-template-areas: 
+    grid-template-areas:
         ".  .  "
         "box1 box2"
         ".  .  ";
@@ -58,7 +58,7 @@
 .box3 {
     grid-column: 1 / 3;
     grid-row: 1 / 2;
-    grid-template-rows: 0.1fr 0.2fr 0.1fr 0.1fr;
+    grid-template-rows: (4, min-content);
     display: grid;
     gap: 1.5rem 0;
     grid-template-areas:
@@ -76,16 +76,11 @@
     grid-row: 2 / 3;
     background-color: #d40032;
     width: 100%;
-    /*background-image: url("imgs/alebrije_1.png");
-    height: 100%;
-    max-height: 100%;
-    background-size: cover;
-    background-position: center;*/
 }
 
 .box4a {
     display: grid;
-    grid-template-rows: 0.5fr 0.5fr 0.5fr;
+    grid-template-rows: (3, min-content);
     grid-template-areas:
         "text4a"
         "text4a"
@@ -96,7 +91,7 @@
 
 .box5 {
     display: grid;
-    grid-template-rows: 0.5fr 0.5fr 0.5fr;
+    grid-template-rows: (3, min-content);
     grid-template-areas:
         "text5"
         "text5"
@@ -182,24 +177,6 @@ a {
 }
 
 /*main elements*/
-.text1 {
-    text-align: center;
-    vertical-align: middle;
-    justify-content: center;
-    font-size: 40px;
-    text-transform: uppercase;
-    background-color: #016241;
-    width: 100%;
-}
-
-.text2 {
-    text-align: center;
-    justify-content: center;
-    font-size: 14px;
-    background-color: #016241;
-    width: 100%;
-}
-
 .text3a,
 .text3b {
     justify-content: center;
@@ -235,6 +212,7 @@ a {
 .ab1 {
     width: 96%;
     height: 100%;
+    object-fit: cover;
 }
 
 .text4a {
@@ -299,5 +277,36 @@ a {
     grid-row: 3 / 4;
     font-size: 12px;
     font-family: 'Arial Narrow Bold', sans-serif;
-    margin-left: 1rem;    
+    margin-left: 1rem;
+}
+
+@media only screen and (max-width: 480px) {
+    .upper {
+        text-transform: uppercase;
+        font-size: 20px;
+        font-family: 'Arial Narrow Bold', sans-serif;
+    }
+
+    .lower {
+        font-size: 11px;
+        font-family: 'Arial Narrow Bold', sans-serif;
+    }
+
+    .ab1 {
+        object-fit: scale-down;
+    }
+
+    .icon {
+        width: 25px;
+        height: 25px;
+    }
+
+    .copyright {
+        font-size: 10px;
+    }
+
+    .nav_bar,
+    .box1 {
+        margin-left: 1rem;
+    }
 }
